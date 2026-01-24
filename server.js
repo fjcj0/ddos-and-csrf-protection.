@@ -10,6 +10,7 @@ import { rateLimiter, speedLimiter, browserOnly } from './tools/DDosProtection.j
 import { socketRateLimit } from './tools/socketLimiter.js';
 import generateCsrfToken from './tools/csrf.js';
 import csrfProtection from './middleware/csrfProtection.js';
+import job from './tools/cron.js';
 const app = express();
 app.use(cookieParser(process.env.COOKIE_SECRET));
 morgan.token('client-ip', (request) => {
