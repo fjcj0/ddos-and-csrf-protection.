@@ -39,7 +39,7 @@ app.get("/api/csrf-token", (request, response) => {
         secure: process.env.NODE_ENV === 'production',
         sameSite: process.env.NODE_ENV === 'production' ? 'Strict' : 'Lax',
     });
-    response.status(201).json({ csrfToken });
+    return response.status(201).json({ csrfToken });
 });
 app.get('/api/cron', (request, response) => {
     return response.status(200).json({
